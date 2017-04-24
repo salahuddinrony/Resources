@@ -1,0 +1,31 @@
+<?php
+echo '<h3>Count duplicate element of an array in PHP without using in-built function</h3>';
+
+$arraychars = array('A','A','B','B','B','A','A','A','C','A','C','A','B','B','A');
+
+// Solution 01
+echo '<h2>Solution 01</h2>';
+
+echo $arrayLength = count($arraychars);
+$valCount = array();
+for($i=0;$i<$arrayLength;$i++){
+	$key = $arraychars[$i];
+	if(@$valCount[$key] >= 1){
+		$valCount[$key]++;
+	}else{
+		$valCount[$key] = 1;
+	}
+}
+
+echo '<pre>';
+var_dump($valCount);
+echo '</pre>';
+
+
+// Solution 02
+echo '<h2>Solution 02</h2>';
+echo '<pre>';
+var_dump(array_count_values($arraychars));
+echo '</pre>';
+
+?>
